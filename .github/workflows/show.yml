@@ -1,0 +1,11 @@
+name: Show
+on: push
+jobs:
+  show:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, ubuntu-22.04 ]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 1
+    steps:
+      - run: podman system info
